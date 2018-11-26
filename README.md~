@@ -1,0 +1,12 @@
+# currency-calc
+Currency calculator written in Python.
+This is a learning exercise for me.
+Very messy, works with python 2.7
+
+Starting point.  Concuren.py pulls from exchangeratesapi.io  
+Grabanread.py uses local file usethis.json.  
+Grabanread.py works on the command line if you type the country code with ' ', ie. 'USD'
+
+Next steps are to improve the CLI version
+
+Interface.py is a starting point for GUI

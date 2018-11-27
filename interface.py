@@ -59,18 +59,25 @@ def conversion():
 
 #    items = self.listbox.curselection()
 #    items = [self.data[float(item)] for item in items]
-    #detail = float(entry.get())
+    detail = entry.get()
     magic = listbox.get(listbox.curselection())
     print(rate.values())
     print(type(magic))
     selec = magic[0:5]
     multiplier = float(magic.lstrip(magic[0:5]))
 
-    print(selec)
+    print(detail)
+
+    jello = float(detail)
+
+
+
     print(multiplier)
-    print(type(multiplier))
-    #cheese = multiplier + detail
-    #box.showinfo('Selection', selec + ' in base_Currency is:' + cheese )
+    jelloMulti = multiplier * jello
+
+    print(jelloMulti)
+
+    box.showinfo('selec', detail + "  " + selec + ' is {} euro'  .format(jelloMulti))
 
 #    items = self.listbox.curselection()
 

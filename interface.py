@@ -34,31 +34,25 @@ lb = Listbox(frame)
 #self.data = data
 #self.lb.delete(0, END) # clear
 
-
-
-#for rates, value in rate
 for rates in rate:
     listbox.insert(END, '{}: {}'.format(rates, rate[rates]))
-##
+
+btn = Button(frame, text = 'Calculate', command = conversion)
+btn.pack(side = RIGHT, padx = 5)
+entry.pack(side = RIGHT, padx = 10, pady = 10)
+listbox.pack(side= LEFT)
+frame.pack(padx = 30, pady = 30)
 
 
-#When querying the list, simply fetch the items from the data attribute,
-#using the selection as an index:
-
-#items = self.lb.curselection()
-#items = [self.data[float(item)] for item in items]
+window.mainloop()
 
 
 
-
-#TODO print individual values with selected rates
 def conversion():
 
+###called by button click.
 
-#TODO something, anythinpring
 
-#    items = self.listbox.curselection()
-#    items = [self.data[float(item)] for item in items]
     detail = entry.get()
     magic = listbox.get(listbox.curselection())
     print(rate.values())
@@ -79,17 +73,8 @@ def conversion():
 
     box.showinfo('selec', detail + "  " + selec + ' is {} euro'  .format(jelloMulti))
 
-#    items = self.listbox.curselection()
+
 
 
     return
 ###
-
-btn = Button(frame, text = 'Calculate', command = conversion)
-btn.pack(side = RIGHT, padx = 5)
-entry.pack(side = RIGHT, padx = 10, pady = 10)
-listbox.pack(side= LEFT)
-frame.pack(padx = 30, pady = 30)
-
-
-window.mainloop()

@@ -21,7 +21,7 @@ label.pack(padx = 200 , pady = 50)
 frame = Frame(window)
 entry = Entry(frame)
 
-listbox = Listbox(frame)
+listbox = Listbox(frame, exportselection=False)
 lb = Listbox(frame)
 
 #listbox = Listbox(master)
@@ -36,18 +36,6 @@ lb = Listbox(frame)
 
 for rates in rate:
     listbox.insert(END, '{}: {}'.format(rates, rate[rates]))
-
-btn = Button(frame, text = 'Calculate', command = conversion)
-btn.pack(side = RIGHT, padx = 5)
-entry.pack(side = RIGHT, padx = 10, pady = 10)
-listbox.pack(side= LEFT)
-frame.pack(padx = 30, pady = 30)
-
-
-window.mainloop()
-
-
-
 def conversion():
 
 ###called by button click.
@@ -61,20 +49,20 @@ def conversion():
     multiplier = float(magic.lstrip(magic[0:5]))
 
     print(detail)
-
     jello = float(detail)
-
-
-
     print(multiplier)
     jelloMulti = multiplier * jello
 
     print(jelloMulti)
 
     box.showinfo('selec', detail + "  " + selec + ' is {} euro'  .format(jelloMulti))
-
-
-
-
     return
-###
+
+btn = Button(frame, text = 'Calculate', command = conversion)
+btn.pack(side = RIGHT, padx = 5)
+entry.pack(side = RIGHT, padx = 10, pady = 10)
+listbox.pack(side= LEFT)
+frame.pack(padx = 30, pady = 30)
+
+
+window.mainloop()

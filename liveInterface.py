@@ -1,22 +1,15 @@
 import json
 import sys
-#import grabandread.py
 from tkinter import *
 import tkinter.messagebox as box
 import requests
-#def pullCurrency():
-#atm this function only pulls the currency information with Euro as base ###
+
 
 r = requests.get('https://api.exchangeratesapi.io/latest')
-#provide unicode object     info = r.text
-#####uncomment to provide datacheck    print(info)
-self = r.json()
 
-#info = "usethis.json"
-#file = open(info, 'r')
-#n = file.read()
-#self = json.loads(n)
-rate = self['rates']
+info = r.json()
+
+rate = info['rates']
 data = rate.values()
 print(data)
 
@@ -30,15 +23,6 @@ entry = Entry(frame)
 listbox = Listbox(frame, exportselection=False)
 lb = Listbox(frame)
 
-#listbox = Listbox(master)
-#listbox.pack()
-#lb = Listbox(selectmode=EXTENDED)
-
-#for rates in rate:
-#    listbox.insert(END, '{}: {}'.format(rates, rate[rates]))
-#    self.listbox.insert(END, key)
-#self.data = data
-#self.lb.delete(0, END) # clear
 
 for rates in rate:
     listbox.insert(END, '{}: {}'.format(rates, rate[rates]))

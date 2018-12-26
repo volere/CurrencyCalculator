@@ -24,15 +24,6 @@ entry = Entry(frame)
 listbox = Listbox(frame, exportselection=False)
 lb = Listbox(frame)
 
-#listbox = Listbox(master)
-#listbox.pack()
-#lb = Listbox(selectmode=EXTENDED)
-
-#for rates in rate:
-#    listbox.insert(END, '{}: {}'.format(rates, rate[rates]))
-#    self.listbox.insert(END, key)
-#self.data = data
-#self.lb.delete(0, END) # clear
 
 for rates in rate:
     listbox.insert(END, '{}: {}'.format(rates, rate[rates]))
@@ -54,9 +45,9 @@ def conversion():
     jelloMulti = multiplier * jello
 
     print(jelloMulti)
-
     box.showinfo('selec', detail + "  " + selec + ' is {} euro'  .format(jelloMulti))
     return
+
 
 btn = Button(frame, text = 'Calculate', command = conversion)
 btn.pack(side = RIGHT, padx = 5)

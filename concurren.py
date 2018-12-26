@@ -39,31 +39,3 @@ def calc():
 
 printRates()
 calc()
-
-
-#def workDenom(info):
-#    for item in info
-#    print item
-
-#    return;
-
-##################rates info??? gonna need some looks#########
-#####Theese commands convert the response into json/dictformat////
-################################
-#data = r.json()
-#rate = data['rates']  #singles out rates section
-#print(rate)
-###############################################################
-###############################
-#TODO call indivual rates, perhaps make a thing that does something
-
-
-
-#date = datetime.strptime(data['date'], "%Y-%m-%d")
-
-
-
-#for rate in sorted(rate):
-#    cur_rate = rate[rate]
-#    print("{} ({})".format,rate))
-#

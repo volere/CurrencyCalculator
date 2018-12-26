@@ -3,15 +3,19 @@ import sys
 from tkinter import *
 import tkinter.messagebox as box
 import requests
-
-
 r = requests.get('https://api.exchangeratesapi.io/latest')
 
+
+def deal data(r)
 info = r.json()
 
 rate = info['rates']
 data = rate.values()
 print(data)
+return data
+
+deal(r)
+
 
 window = Tk()
 window.title('Currency Calculator')
@@ -20,12 +24,59 @@ label.pack(padx = 200 , pady = 50)
 frame = Frame(window)
 entry = Entry(frame)
 
-listbox = Listbox(frame, exportselection=False)
+
+['USD',
+'IDR',
+'BGN',
+'ISK',
+'ILS',
+'GBP',
+'DKK',
+'CAD',
+'MXN',
+'HUF',
+'RON',
+'MYR',
+'SEK',
+'SGD',
+'HKD',
+'AUD',
+'CHF',
+'KRW',
+'CNY',
+'TRY',
+'HRK',
+'NZD',
+'THB',
+'NOK',
+'RUB',
+'INR',
+'JPY',
+'CZK',
+'BRL',
+'PLN',
+'PHP',
+'ZAR']
+
+
+
+
+listbox1, listbox = Listbox(frame, exportselection=False)
 lb = Listbox(frame)
 
-
 for rates in rate:
-    listbox.insert(END, '{}: {}'.format(rates, rate[rates]))
+    listbox1.insert(END, '{}'.format(rates))
+
+
+
+
+
+
+r = requests.get('https://api.exchangeratesapi.io/latest?base=' + base_currency)
+
+deal(r)
+for rates in rate:
+    listbox2.insert(END, '{}: {}'.format(rates, rate[rates]))
 def conversion():
 
 ###called by button click.
